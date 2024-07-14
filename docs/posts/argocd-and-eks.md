@@ -3,19 +3,23 @@ draft: true
 date: 2024-07-14
 categories:
   - Doc Failures
-  - Kubernetes
+tags:
   - ArgoCD
+  - Kubernetes
+  - EKS
 ---
 
 # Doc Failures: ArgoCD and EKS
 
 Small Patch; Big Implications
 
-I encountered an error that wound up really testing my understanding of K8s, containers, and ArgoCD:
+I encountered an error that really testing my understanding of K8s, containers, and ArgoCD:
 
 ```
 # getting credentials: exec: executable argocd-k8s-auth failed with exit code 20 (Client.Timeout exceeded while awaiting headers)
 ```
+
+<!-- more -->
 
 This error hinted at credential issues and a timeout while awaiting headers. Initial checks on network configurations, IAM roles, and Kubernetes cluster accessibility didn't resolve the problem. It became clear that the issue was deeper, involving the security context of our Kubernetes deployment.
 

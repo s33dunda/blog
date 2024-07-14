@@ -1,8 +1,13 @@
 site_name: Dunda's Blog
-site_url: http://blog.dunda.me
+site_description: A blog about SRE, DevOps, Platform Engineering, and more.
+site_url: https://blog.dunda.me
 theme:
   name: material
+  features:
+    - navigation.indexes
 plugins:
+  - search
+  - tags
   - blog:
       blog_dir: .
       blog_toc: true
