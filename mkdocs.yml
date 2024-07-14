@@ -5,7 +5,4 @@ theme:
 plugins:
   - blog:
       blog_dir: .
-nav:
-  - index.md
-  - Blog:
-      - blog/index.md
+      blog_toc: true
