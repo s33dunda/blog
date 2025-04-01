@@ -35,7 +35,6 @@ theme:
     code: Roboto Mono
   icon:
     logo: material/code-tags
-  favicon: assets/favicon.png
 extra:
   social:
     - icon: fontawesome/brands/github
