@@ -2,6 +2,7 @@
 authors = ["Charles Dunda <s33dunda@gmail.com>"]
 description = "Platform Engineering Blog Site"
 name = "blog"
+package-mode = false
 readme = "README.md"
 version = "0.1.0"
 
