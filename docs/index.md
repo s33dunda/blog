@@ -34,8 +34,8 @@ Stuff like:
 - Cloud infrastructure and automation
 - _Am I repeating myself here ^?_
 
-Not gonna lie. All of which are written with the help of ~~Al~~. A ~~ChatBot~~. An ~~LLM~~. Our new Overlords!
-I'll call out the places in which AI did the heavy lifting. Lets have some fun!
+Not gonna lie. All of which are written with the help of ~~Al~~. A ~~ChatBot~~. An ~~LLM~~. The new Overlords!  
+But I'll call out and highlight the places in which AI did the heavy lifting. Let's have some fun!
 
 ## Latest Posts
 
