@@ -3,21 +3,22 @@ site_description: A blog about SRE, DevOps, Platform Engineering, and more.
 site_url: https://blog.dunda.me
 theme:
   name: material
+  custom_dir: docs/overrides
   features:
     - navigation.indexes
     - navigation.sections
-    - navigation.top        # Adds a "back to top" button
-    - navigation.footer    # Adds footer navigation
-    - search.suggest      # Adds search suggestions
-    - search.highlight    # Highlights search results
-    - content.code.copy   # Adds copy button to code blocks
-    - content.code.annotate # Enables code annotations
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.code.annotate
   palette:
     # Light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo     # Primary color for headers and links
-      accent: deep purple # Accent color for buttons and interactive elements
+      primary: indigo
+      accent: deep purple
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -30,25 +31,26 @@ theme:
         icon: material/brightness-4
         name: Switch to light mode
   font:
-    text: Roboto         # Main text font
-    code: Roboto Mono    # Code font
+    text: Roboto
+    code: Roboto Mono
   icon:
-    logo: material/code-tags  # Logo in the header
+    logo: material/code-tags
   favicon: assets/favicon.png
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername
+      link: https://github.com/s33dunda
     - icon: fontawesome/brands/linkedin
-      link: https://linkedin.com/in/yourusername
+      link: https://linkedin.com/in/charles-dunda
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/yourusername
+      link: https://twitter.com/s33dunda
+  generator: false  # Removes the "Made with Material for MkDocs" text
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.emoji:
@@ -56,12 +58,14 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
       options:
         custom_icons:
-          - overrides/.icons/custom    # Make sure this path is correct
+          - overrides/.icons/custom
           - material/icons/material/baseline
   - attr_list
   - md_in_html
 extra_css:
   - stylesheets/extra.css
+extra_javascript:
+  - overrides/partials/javascripts/extra.html
 plugins:
   - search
   - tags
@@ -76,3 +80,4 @@ plugins:
       authors: true
 nav:
   - Home: index.md
+  - Blog: blog/index.md

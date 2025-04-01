@@ -2,19 +2,27 @@
 
 !!! quote "Dictionary Entry"
 
-??? abstract "_Dunda_ /ˈdʌndə/"
+    ??? abstract "_Dunda_ /ˈdʌndə/"
 
-    _noun_
-    1. A surname, pronounced "Done-Duh"
-    2. One who gives deeply philosophical and nuanced takes around how SRE, DevOps, and Platform Engineering are totally not the same thing.
-    3. One who is triggering
-    4. An Oaf
-    _adjective_
-    5. Sarcastic, often in a way that is both amusing and slightly unsettling.
+        _noun_
 
-!!! example "Usage"
+        1. A surname, pronounced "Done-Duh"
 
-    "I tried to explain the difference between DevOps and Platform Engineering, but then a total Dunda showed up and made it way more complicated than it needed to be."
+        2. One who gives deeply philosophical and nuanced takes around how SRE, DevOps, and Platform
+
+            Engineering are totally not the same thing.
+
+        3. One who is triggering
+
+        4. Delusionally grandiose; quixotic
+
+        _adjective_
+
+        5. Sarcastic, often in a way that is both amusing and slightly unsettling.
+
+        ??? example "Usage"
+
+            "I tried to explain the difference between DevOps and Platform Engineering, but then a total Dunda showed up and made it way more complicated than it needed to be."
 
 Here you'll find stuff an idiot human writes about before the robots took over.
 

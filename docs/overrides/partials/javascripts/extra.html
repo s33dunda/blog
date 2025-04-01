@@ -1,0 +1,32 @@
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add both top and bottom buttons
+    const buttonHTML = `
+      <a href="https://www.buymeacoffee.com/s33dunda" target="_blank" class="bmc-button">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 145px !important;">
+      </a>
+    `;
+
+    // Function to add button
+    function addButton(position) {
+        document.body.insertAdjacentHTML('beforeend', 
+            buttonHTML.replace('bmc-button"', `bmc-button bmc-button-${position}"`)
+        );
+    }
+
+    // Add both buttons
+    addButton('top');
+    addButton('bottom');
+
+    // Hide buttons when scrolling
+    let timeout;
+    window.addEventListener('scroll', () => {
+        const buttons = document.querySelectorAll('.bmc-button');
+        buttons.forEach(button => button.classList.add('hidden'));
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            buttons.forEach(button => button.classList.remove('hidden'));
+        }, 500);
+    });
+});
+</script>
