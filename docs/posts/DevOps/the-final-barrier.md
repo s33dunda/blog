@@ -15,7 +15,7 @@ draft: false
 
 !!! question "What is DevOps?"
 
-    Now I've been practicing "DevOps" for 12 years and I have my opinions but like the controversial GIF pronunciation...
+    I've been practicing "DevOps" for 12 years and I have my opinions but like the controversial GIF pronunciation...
 
 ??? failure "Hot Take"
 
