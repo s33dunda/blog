@@ -95,4 +95,4 @@ You need a VPC? What are you crazy? Don't put that in your codebase.
 
 I'll continue writing tutorials and blogs to help folks learn how to move closer to the code.
 
-Stay tuned!
+Stay tuned and look out for more content including examples and actual code!
