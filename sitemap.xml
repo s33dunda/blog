@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://blog.dunda.me/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.dunda.me/doc-failures-argocd-and-eks/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.dunda.me/devops-with-the-code-the-final-boss/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.dunda.me/archive/2025/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.dunda.me/archive/2024/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.dunda.me/category/devops/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.dunda.me/category/platform-engineering/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.dunda.me/category/doc-failures/</loc>
+         <lastmod>2025-04-02</lastmod>
+    </url>
+</urlset>
