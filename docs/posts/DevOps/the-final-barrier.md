@@ -21,10 +21,10 @@ draft: false
 
     It's pronounced GIF! Fight me! :material-sword-cross:
 
-I feel its important to include the creators of the term. Most notably [Patrick Debois](https://www.jedi.be/) to see what he has to say about it.
+I feel its important to include the originators of the term DevOps -- most notably [Patrick Debois](https://www.jedi.be/) -- to see what is said about it.
 
-I found [this](https://www.linux.com/audience/enterprise/what-devops-patrick-debois-explains/) interview with the man himself.
-And in true tl;dr; fashion, (what isn't tl;dr; these days since the creation of Musical.ly? :musical_note: (pronounced TikTok)), I've asked Claude to "Pull out the keys, mode of concepts, and threads of the interview."
+I found [this](https://www.linux.com/audience/enterprise/what-devops-patrick-debois-explains/) interview with Mr. Debois to be succinct.
+And in true tl;dr; fashion -- (what isn't tl;dr; these days since the creation of Musical.ly? :musical_note: (What's Musical.ly? it's pronounced TikTok)) -- I've asked Claude to "Pull out the keys, mode of concepts, and threads of the interview."
 
 And what did Claude gleam?
 
