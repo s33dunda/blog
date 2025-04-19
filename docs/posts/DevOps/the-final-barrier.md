@@ -1,5 +1,5 @@
 ---
-title: "DevOps with the Code: The Final Boss"
+title: "DevOps with the App Code: The Final Boss"
 date: 2025-04-01
 authors:
   - cdunda
@@ -75,7 +75,7 @@ Business value
 
 </div>
 
-## What "Moving Closer to the Code" Really Means
+## What "Moving Closer to the App Code" Really Means
 
 If we take our the four keys mentioned by Debois:
 
@@ -84,15 +84,15 @@ If we take our the four keys mentioned by Debois:
 - Cultural transformation in organizational structure
 - Business competitiveness and survival
 
-It stands to reason that moving closer to the code is more than just Policy as Code, Infrastructure as Code, Configuration as Code, or even GitOps. Because even with all of those tools, we still run the risk of pulling a Fry:
+It stands to reason that moving closer to the app code is more than just Policy as Code, Infrastructure as Code, Configuration as Code, or even GitOps. Because even with all of those tools, we still run the risk of pulling a Fry:
 
 <img src="../../../assets/images/whats-mine-is-not-yours.png" alt="Fry realizing its not yours">
 
-So we need to stop siloing our codebase. That's right. Stop siloing your codebase.
-You need a k8s deploy? Put it in your codebase. You need metrics, traces, and monitors enabled? Put it in your codebase. You need a database, message bus, or cache? Put it in your codebase!
+So we need to stop siloing our app code. That's right. Stop siloing your app code.
+You need a k8s deploy? Put it with your app code. You need metrics, traces, and monitors enabled? Put it with your app code. You need a database, message bus, or cache? Put it with your app code!
 
-You need a VPC? What are you crazy? Don't put that in your codebase.
+You need a VPC? What are you crazy? Don't put that with your app code.
 
-I'll continue writing tutorials and blogs to help folks learn how to move closer to the code.
+I'll continue writing tutorials and blogs to help folks learn how to move closer to the app code.
 
 Stay tuned and look out for more content including examples and actual code!
