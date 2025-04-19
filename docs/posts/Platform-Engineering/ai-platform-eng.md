@@ -58,7 +58,7 @@ Let me know if that's something any of y'all are be interested in.
 I thought that A2A was a sort of Schema for AI agents. But it's not. A2A (Agent2Agent) is a specific protocol with its own distinct purpose and categorization, Google Fu resulted in many musings within the last couple of days:
 
 A2A is an open protocol developed by Google that "will allow AI agents to communicate with each other, securely exchange information, and coordinate actions on top of various enterprise platforms or applications." It was recently announced, about a week ago.
-Announcing the Agent2Agent Protocol (A2A) - Google Developers Blog<sub><a href="#ref6">[6]</a></sub>
+Announcing the Agent2Agent Protocol (A2A) - Google Developers Blog.<sub><a href="#ref6">[6]</a></sub>
 
 The Agent2Agent (A2A) protocol "facilitates communication between independent AI agents" and addresses "one of the biggest challenges in enterprise AI adoption is getting agents built on different frameworks and vendors to work together."
 GitHub - google/A2A: An open protocol enabling communication and interoperability between opaque agentic applications.<sub><a href="#ref7">[7]</a></sub>
@@ -83,6 +83,18 @@ How the Agent2Agent Protocol (A2A) Actually Works: A Technical Breakdown | Blott
 
 In terms of how A2A relates to MCP: "If MCP is what enables agents to use tools, then A2A is their conversation while they work. MCP equips individual agents with capabilities, while A2A helps them coordinate those capabilities as a team."
 What Is the A2A (Agent2Agent) Protocol and How It Works<sub><a href="#ref14">[14]</a></sub>
+
+Google shows a typical flow for A2A being:
+
+    Discovery: Client fetches the Agent Card from the server's well-known URL.
+    Initiation: Client sends a tasks/send or tasks/sendSubscribe request containing the initial user message and a unique Task ID.
+    Processing:
+        (Streaming): Server sends SSE events (status updates, artifacts) as the task progresses.
+        (Non-Streaming): Server processes the task synchronously and returns the final Task object in the response.
+    Interaction (Optional): If the task enters input-required, the client sends subsequent messages using the same Task ID via tasks/send or tasks/sendSubscribe.
+    Completion: The task eventually reaches a terminal state (completed, failed, canceled).
+
+And with all of the big players involved, Atlassian, Box, Cohere, Intuit, Langchain, MongoDB, PayPal, Salesforce, SAP, ServiceNow, UKG and Workday; and leading service providers including Accenture, BCG, Capgemini, Cognizant, Deloitte, HCLTech, Infosys, KPMG, McKinsey, PwC, TCS, and Wipro. I think it's safe to say that A2A should be taken seriously and used in your projects or at the very least added as a ticket to your backlogs.
 
 <!-- Reference Links -->
 
