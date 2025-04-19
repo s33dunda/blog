@@ -43,15 +43,13 @@ extra:
       link: https://linkedin.com/in/charles-dunda
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/s33dunda
-  generator: false  # Removes the "Made with Material for MkDocs" text
+  generator: false # Removes the "Made with Material for MkDocs" text
 markdown_extensions:
+  - abbr
   - admonition
+  - attr_list
+  - md_in_html
   - pymdownx.details
-  - pymdownx.superfences
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.tasklist:
-      custom_checkbox: true
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
@@ -59,13 +57,19 @@ markdown_extensions:
         custom_icons:
           - overrides/.icons/custom
           - material/icons/material/baseline
-  - attr_list
-  - md_in_html
+  - pymdownx.snippets:
+      base_path: docs/includes
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tilde
 extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - overrides/partials/javascripts/extra.html
+  - javascripts/image-tooltips.js
 plugins:
   - search
   - tags
@@ -80,3 +84,5 @@ plugins:
       authors: true
 nav:
   - Home: index.md
+  - Features:
+      - Image Tooltips: features/image-tooltips.md
