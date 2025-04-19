@@ -4,15 +4,14 @@ date: 2025-04-16
 authors:
   - s33d-innovations
 categories:
-  - DevOps
   - Platform Engineering
-  - Local Development
+  - AI
+  - Artificial Intelligence
 tags:
-  - devcontainers
-  - devbox
-  - nix-packages
-  - local-development
-  - kubernetes
+  - AI
+  - platform-engineering
+  - artificial-intelligence
+  - meetups
 draft: false
 ---
 
