@@ -43,6 +43,8 @@ extra:
       link: https://linkedin.com/in/charles-dunda
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/s33dunda
+    - icon: fontawesome/brands/bluesky
+      link: https://bsky.app/profile/cdunda.bsky.social
   generator: false # Removes the "Made with Material for MkDocs" text
 markdown_extensions:
   - abbr
