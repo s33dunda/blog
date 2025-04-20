@@ -13,7 +13,7 @@ tags:
   - github-actions
   - x
   - kubernetes
-draft: true
+draft: false
 ---
 
 # GitOps Migration Series: From X to GitOps with GitHub Actions and ArgoCD
@@ -33,7 +33,7 @@ Overview of our journey migrating from X to ArgoCD with GitHub Actions
 X limitations we faced
 
 - Managing yet another CI and or CD tool
-- If you want to be Devops you move closer to the code
+- If you want to be Devops you move closer to the app code
 
 Why we chose ArgoCD over alternatives
 

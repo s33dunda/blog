@@ -26,12 +26,12 @@
 *[Plant]: Application running in your infrastructure
 *[PLANT]: Application running in your infrastructure
 *[plant]: Application running in your infrastructure
-*[Garden]: The complete platform
-*[GARDEN]: The complete platform
-*[garden]: The complete platform
-*[Farm]: The complete platform
-*[FARM]: The complete platform
-*[farm]: The complete platform
+*[Garden]: The complete infrastructure landscape
+*[GARDEN]: The complete infrastructure landscape
+*[garden]: The complete infrastructure landscape
+*[Farm]: The complete infrastructure landscape
+*[FARM]: The complete infrastructure landscape
+*[farm]: The complete infrastructure landscape
 *[Plots]: Virtual Private Clouds (VPCs) that isolate resources
 *[PLOTS]: Virtual Private Clouds (VPCs) that isolate resources
 *[plots]: Virtual Private Clouds (VPCs) that isolate resources
@@ -44,75 +44,78 @@
 *[Sub-plot]: Subnet within VPC providing further network segmentation
 *[SUB-PLOT]: Subnet within VPC providing further network segmentation
 *[sub-plot]: Subnet within VPC providing further network segmentation
-*[Soil]: CPU resources that power applications
-*[SOIL]: CPU resources that power applications
-*[soil]: CPU resources that power applications
-*[Water]: Memory resources available to applications
-*[WATER]: Memory resources available to applications
-*[water]: Memory resources available to applications
-*[Sunlight]: Traffic or user load hitting your services
-*[SUNLIGHT]: Traffic or user load hitting your services
-*[sunlight]: Traffic or user load hitting your services
+*[Soil]: Memory resources
+*[SOIL]: Memory resources
+*[soil]: Memory resources
+*[Water]: CPU resources
+*[WATER]: CPU resources
+*[water]: CPU resources
+*[Sunlight]: Energy/Electricity
+*[SUNLIGHT]: Energy/Electricity
+*[sunlight]: Energy/Electricity
+*[Environmental Stressors]: Traffic/User load
+*[ENVIRONMENTAL STRESSORS]: Traffic/User load
+*[environmental stressors]: Traffic/User load
 
-<!-- Chemical Signaling -->
+<!-- Chemical Signaling (VOCs) -->
 
-*[Warning VOCs]: Alerts and monitoring notifications about system issues
-*[WARNING VOCS]: Alerts and monitoring notifications about system issues
-*[warning vocs]: Alerts and monitoring notifications about system issues
-*[Defensive Compounds]: Auto-scaling, circuit breakers, and failover mechanisms
-*[DEFENSIVE COMPOUNDS]: Auto-scaling, circuit breakers, and failover mechanisms
-*[defensive compounds]: Auto-scaling, circuit breakers, and failover mechanisms
-*[Attractant Signals]: Load balancing that redirects traffic to healthy services
-*[ATTRACTANT SIGNALS]: Load balancing that redirects traffic to healthy services
-*[attractant signals]: Load balancing that redirects traffic to healthy services
-*[Repellent Signals]: Rate limiting, traffic shaping, and DDoS protection measures
-*[REPELLENT SIGNALS]: Rate limiting, traffic shaping, and DDoS protection measures
-*[repellent signals]: Rate limiting, traffic shaping, and DDoS protection measures
+*[Warning VOCs]: Alerts/monitoring notifications
+*[WARNING VOCS]: Alerts/monitoring notifications
+*[warning vocs]: Alerts/monitoring notifications
+*[Defensive Compounds]: Auto-scaling, circuit breakers, failover mechanisms
+*[DEFENSIVE COMPOUNDS]: Auto-scaling, circuit breakers, failover mechanisms
+*[defensive compounds]: Auto-scaling, circuit breakers, failover mechanisms
+*[Attractant Signals]: Load balancing (redirecting traffic to healthy services)
+*[ATTRACTANT SIGNALS]: Load balancing (redirecting traffic to healthy services)
+*[attractant signals]: Load balancing (redirecting traffic to healthy services)
+*[Repellent Signals]: Rate limiting, traffic shaping, DDoS protection
+*[REPELLENT SIGNALS]: Rate limiting, traffic shaping, DDoS protection
+*[repellent signals]: Rate limiting, traffic shaping, DDoS protection
 
 <!-- Mycorrhizal Networks -->
 
-*[Fungal Network]: Service mesh and API gateway infrastructure
-*[FUNGAL NETWORK]: Service mesh and API gateway infrastructure
-*[fungal network]: Service mesh and API gateway infrastructure
-*[Underground Fungal Network]: Service mesh and API gateway infrastructure
-*[UNDERGROUND FUNGAL NETWORK]: Service mesh and API gateway infrastructure
-*[underground fungal network]: Service mesh and API gateway infrastructure
+*[Fungal Network]: Service mesh/API gateway infrastructure
+*[FUNGAL NETWORK]: Service mesh/API gateway infrastructure
+*[fungal network]: Service mesh/API gateway infrastructure
+*[Underground Fungal Network]: Service mesh/API gateway infrastructure
+*[UNDERGROUND FUNGAL NETWORK]: Service mesh/API gateway infrastructure
+*[underground fungal network]: Service mesh/API gateway infrastructure
 *[Nutrient Exchange]: Data sharing between microservices
 *[NUTRIENT EXCHANGE]: Data sharing between microservices
 *[nutrient exchange]: Data sharing between microservices
-*[Shared Resources]: Common databases, caches, and message brokers
-*[SHARED RESOURCES]: Common databases, caches, and message brokers
-*[shared resources]: Common databases, caches, and message brokers
-*[Stress Signal Propagation]: Distributed tracing and cascading failure detection
-*[STRESS SIGNAL PROPAGATION]: Distributed tracing and cascading failure detection
-*[stress signal propagation]: Distributed tracing and cascading failure detection
+*[Shared Resources]: Common databases, caches, message brokers
+*[SHARED RESOURCES]: Common databases, caches, message brokers
+*[shared resources]: Common databases, caches, message brokers
+*[Stress Signal Propagation]: Distributed tracing, cascading failure detection
+*[STRESS SIGNAL PROPAGATION]: Distributed tracing, cascading failure detection
+*[stress signal propagation]: Distributed tracing, cascading failure detection
 
 <!-- Electrical/Calcium Signaling -->
 
-*[Signal Pathways]: Message queues and event buses like Kafka and RabbitMQ
-*[SIGNAL PATHWAYS]: Message queues and event buses like Kafka and RabbitMQ
-*[signal pathways]: Message queues and event buses like Kafka and RabbitMQ
+*[Signal Pathways]: Message queues/event buses (Kafka, RabbitMQ)
+*[SIGNAL PATHWAYS]: Message queues/event buses (Kafka, RabbitMQ)
+*[signal pathways]: Message queues/event buses (Kafka, RabbitMQ)
 *[Calcium Waves]: Event propagation patterns through the system
 *[CALCIUM WAVES]: Event propagation patterns through the system
 *[calcium waves]: Event propagation patterns through the system
-*[Electrical Impulses]: Real-time communications like WebSockets and gRPC
-*[ELECTRICAL IMPULSES]: Real-time communications like WebSockets and gRPC
-*[electrical impulses]: Real-time communications like WebSockets and gRPC
+*[Electrical Impulses]: Real-time communications (WebSockets, gRPC)
+*[ELECTRICAL IMPULSES]: Real-time communications (WebSockets, gRPC)
+*[electrical impulses]: Real-time communications (WebSockets, gRPC)
 *[Glutamate Signaling]: Standardized API communication protocols
 *[GLUTAMATE SIGNALING]: Standardized API communication protocols
 *[glutamate signaling]: Standardized API communication protocols
 
 <!-- Sound/Vibration Communication -->
 
-*[Ultrasonic Stress Sounds]: Log aggregation and centralized logging
-*[ULTRASONIC STRESS SOUNDS]: Log aggregation and centralized logging
-*[ultrasonic stress sounds]: Log aggregation and centralized logging
-*[Vibration Sensing]: Health checks and readiness/liveness probes
-*[VIBRATION SENSING]: Health checks and readiness/liveness probes
-*[vibration sensing]: Health checks and readiness/liveness probes
-*[Acoustic Monitoring]: Performance metrics and telemetry
-*[ACOUSTIC MONITORING]: Performance metrics and telemetry
-*[acoustic monitoring]: Performance metrics and telemetry
+*[Ultrasonic Stress Sounds]: Log aggregation/centralized logging
+*[ULTRASONIC STRESS SOUNDS]: Log aggregation/centralized logging
+*[ultrasonic stress sounds]: Log aggregation/centralized logging
+*[Vibration Sensing]: Health checks/readiness/liveness probes
+*[VIBRATION SENSING]: Health checks/readiness/liveness probes
+*[vibration sensing]: Health checks/readiness/liveness probes
+*[Acoustic Monitoring]: Performance metrics/telemetry
+*[ACOUSTIC MONITORING]: Performance metrics/telemetry
+*[acoustic monitoring]: Performance metrics/telemetry
 
 <!-- Root Networks -->
 
@@ -125,21 +128,21 @@
 *[Bi-directional Transfer]: Two-way communication protocols
 *[BI-DIRECTIONAL TRANSFER]: Two-way communication protocols
 *[bi-directional transfer]: Two-way communication protocols
-*[Root Tip Sensing]: Edge detection and boundary services
-*[ROOT TIP SENSING]: Edge detection and boundary services
-*[root tip sensing]: Edge detection and boundary services
-*[Mycorrhizal Networks]: Shared backbone infrastructure
-*[MYCORRHIZAL NETWORKS]: Shared backbone infrastructure
-*[mycorrhizal networks]: Shared backbone infrastructure
-*[Tap roots]: Core services and databases providing primary stability and resource gathering
-*[TAP ROOTS]: Core services and databases providing primary stability and resource gathering
-*[tap roots]: Core services and databases providing primary stability and resource gathering
-*[Fibrous roots]: Microservices architecture with distributed, redundant, and resilient systems
-*[FIBROUS ROOTS]: Microservices architecture with distributed, redundant, and resilient systems
-*[fibrous roots]: Microservices architecture with distributed, redundant, and resilient systems
-*[Root nodules]: Specialized service capabilities forming symbiotic relationships that enhance capabilities
-*[ROOT NODULES]: Specialized service capabilities forming symbiotic relationships that enhance capabilities
-*[root nodules]: Specialized service capabilities forming symbiotic relationships that enhance capabilities
+*[Root Tip Sensing]: Edge detection/boundary services
+*[ROOT TIP SENSING]: Edge detection/boundary services
+*[root tip sensing]: Edge detection/boundary services
+*[Common Mycorrhizal Networks]: Shared backbone infrastructure
+*[COMMON MYCORRHIZAL NETWORKS]: Shared backbone infrastructure
+*[common mycorrhizal networks]: Shared backbone infrastructure
+*[Tap roots]: Core services/databases providing primary stability
+*[TAP ROOTS]: Core services/databases providing primary stability
+*[tap roots]: Core services/databases providing primary stability
+*[Fibrous roots]: Microservices architecture with distributed, redundant systems
+*[FIBROUS ROOTS]: Microservices architecture with distributed, redundant systems
+*[fibrous roots]: Microservices architecture with distributed, redundant systems
+*[Root nodules]: Specialized service capabilities forming symbiotic relationships
+*[ROOT NODULES]: Specialized service capabilities forming symbiotic relationships
+*[root nodules]: Specialized service capabilities forming symbiotic relationships
 
 <!-- Lifecycle Management -->
 
@@ -170,15 +173,15 @@
 *[Pollination]: Data transfer enabling new functionality
 *[POLLINATION]: Data transfer enabling new functionality
 *[pollination]: Data transfer enabling new functionality
-*[Phototropism]: Services optimizing toward user needs, like plants growing toward light sources
-*[PHOTOTROPISM]: Services optimizing toward user needs, like plants growing toward light sources
-*[phototropism]: Services optimizing toward user needs, like plants growing toward light sources
-*[Succession planting]: Progressive infrastructure upgrades following natural ecosystem evolution
-*[SUCCESSION PLANTING]: Progressive infrastructure upgrades following natural ecosystem evolution
-*[succession planting]: Progressive infrastructure upgrades following natural ecosystem evolution
-*[Hybridization]: Service integration with complementary capabilities, combining strong traits from different systems
-*[HYBRIDIZATION]: Service integration with complementary capabilities, combining strong traits from different systems
-*[hybridization]: Service integration with complementary capabilities, combining strong traits from different systems
+*[Phototropism]: Services optimizing toward user needs
+*[PHOTOTROPISM]: Services optimizing toward user needs
+*[phototropism]: Services optimizing toward user needs
+*[Succession planting]: Progressive infrastructure upgrades
+*[SUCCESSION PLANTING]: Progressive infrastructure upgrades
+*[succession planting]: Progressive infrastructure upgrades
+*[Hybridization]: Service integration with complementary capabilities
+*[HYBRIDIZATION]: Service integration with complementary capabilities
+*[hybridization]: Service integration with complementary capabilities
 
 <!-- Monitoring & Maintenance -->
 
@@ -194,27 +197,27 @@
 *[Garden pests]: Security threats and vulnerabilities
 *[GARDEN PESTS]: Security threats and vulnerabilities
 *[garden pests]: Security threats and vulnerabilities
-*[Fences]: Security controls and firewalls
-*[FENCES]: Security controls and firewalls
-*[fences]: Security controls and firewalls
-*[Plant diseases]: Bugs and issues that can spread through related services
-*[PLANT DISEASES]: Bugs and issues that can spread through related services
-*[plant diseases]: Bugs and issues that can spread through related services
+*[Fences/barriers]: Security controls/firewalls
+*[FENCES/BARRIERS]: Security controls/firewalls
+*[fences/barriers]: Security controls/firewalls
+*[Plant diseases]: Bugs/issues that can spread through related services
+*[PLANT DISEASES]: Bugs/issues that can spread through related services
+*[plant diseases]: Bugs/issues that can spread through related services
 *[Quarantine areas]: Isolation of compromised systems
 *[QUARANTINE AREAS]: Isolation of compromised systems
 *[quarantine areas]: Isolation of compromised systems
 *[Ecosystem diversity]: System resilience through redundancy
 *[ECOSYSTEM DIVERSITY]: System resilience through redundancy
 *[ecosystem diversity]: System resilience through redundancy
-*[Drought resistance]: Graceful degradation under resource constraints, adapting to limited resources
-*[DROUGHT RESISTANCE]: Graceful degradation under resource constraints, adapting to limited resources
-*[drought resistance]: Graceful degradation under resource constraints, adapting to limited resources
-*[Dormancy periods]: Planned maintenance windows and scheduled downtime, like seasonal conservation of resources
-*[DORMANCY PERIODS]: Planned maintenance windows and scheduled downtime, like seasonal conservation of resources
-*[dormancy periods]: Planned maintenance windows and scheduled downtime, like seasonal conservation of resources
-*[Stress-induced flowering]: Crisis-driven innovation, similar to plants producing seeds under threat
-*[STRESS-INDUCED FLOWERING]: Crisis-driven innovation, similar to plants producing seeds under threat
-*[stress-induced flowering]: Crisis-driven innovation, similar to plants producing seeds under threat
+*[Drought resistance]: Graceful degradation under resource constraints
+*[DROUGHT RESISTANCE]: Graceful degradation under resource constraints
+*[drought resistance]: Graceful degradation under resource constraints
+*[Dormancy periods]: Planned maintenance windows/scheduled downtime
+*[DORMANCY PERIODS]: Planned maintenance windows/scheduled downtime
+*[dormancy periods]: Planned maintenance windows/scheduled downtime
+*[Stress-induced flowering]: Crisis-driven innovation
+*[STRESS-INDUCED FLOWERING]: Crisis-driven innovation
+*[stress-induced flowering]: Crisis-driven innovation
 
 <!-- Platform Engineering -->
 
@@ -230,39 +233,39 @@
 *[Companion planting]: Complementary service architecture
 *[COMPANION PLANTING]: Complementary service architecture
 *[companion planting]: Complementary service architecture
-*[Crop rotation]: Infrastructure refreshes and updates
-*[CROP ROTATION]: Infrastructure refreshes and updates
-*[crop rotation]: Infrastructure refreshes and updates
-*[Cross-pollination]: Intentional knowledge and code sharing between teams, resulting in new hybrid capabilities and increased diversity
-*[CROSS-POLLINATION]: Intentional knowledge and code sharing between teams, resulting in new hybrid capabilities and increased diversity
-*[cross-pollination]: Intentional knowledge and code sharing between teams, resulting in new hybrid capabilities and increased diversity
-*[Self-pollination]: Team-internal improvements with faster iteration cycles but less diversity
-*[SELF-POLLINATION]: Team-internal improvements with faster iteration cycles but less diversity
-*[self-pollination]: Team-internal improvements with faster iteration cycles but less diversity
-*[Pollinators]: Integration specialists and API developers who help services work together
-*[POLLINATORS]: Integration specialists and API developers who help services work together
-*[pollinators]: Integration specialists and API developers who help services work together
+*[Crop rotation]: Infrastructure refreshes/updates
+*[CROP ROTATION]: Infrastructure refreshes/updates
+*[crop rotation]: Infrastructure refreshes/updates
+*[Cross-pollination]: Intentional knowledge sharing between teams
+*[CROSS-POLLINATION]: Intentional knowledge sharing between teams
+*[cross-pollination]: Intentional knowledge sharing between teams
+*[Self-pollination]: Team-internal improvements
+*[SELF-POLLINATION]: Team-internal improvements
+*[self-pollination]: Team-internal improvements
+*[Pollinators]: Integration specialists/API developers
+*[POLLINATORS]: Integration specialists/API developers
+*[pollinators]: Integration specialists/API developers
 *[Sustainable gardening]: Resource optimization and efficiency
 *[SUSTAINABLE GARDENING]: Resource optimization and efficiency
 *[sustainable gardening]: Resource optimization and efficiency
 
 <!-- Human Elements -->
 
-*[Gardeners]: Platform engineers who maintain the garden infrastructure
-*[GARDENERS]: Platform engineers who maintain the garden infrastructure
-*[gardeners]: Platform engineers who maintain the garden infrastructure
-*[Farmers]: Application developers who grow specific plants for specific purposes
-*[FARMERS]: Application developers who grow specific plants for specific purposes
-*[farmers]: Application developers who grow specific plants for specific purposes
-*[Cultivators]: Application developers who grow specific plants for specific purposes
-*[CULTIVATORS]: Application developers who grow specific plants for specific purposes
-*[cultivators]: Application developers who grow specific plants for specific purposes
-*[Plant scientists]: Architects and technical leaders who study and improve overall system health
-*[PLANT SCIENTISTS]: Architects and technical leaders who study and improve overall system health
-*[plant scientists]: Architects and technical leaders who study and improve overall system health
-*[Seed savers]: DevOps and CI/CD teams who preserve and distribute working patterns
-*[SEED SAVERS]: DevOps and CI/CD teams who preserve and distribute working patterns
-*[seed savers]: DevOps and CI/CD teams who preserve and distribute working patterns
+*[Gardeners]: Platform engineers
+*[GARDENERS]: Platform engineers
+*[gardeners]: Platform engineers
+*[Farmers]: Application developers
+*[FARMERS]: Application developers
+*[farmers]: Application developers
+*[Cultivators]: Application developers
+*[CULTIVATORS]: Application developers
+*[cultivators]: Application developers
+*[Plant scientists]: Architects and technical leaders
+*[PLANT SCIENTISTS]: Architects and technical leaders
+*[plant scientists]: Architects and technical leaders
+*[Seed savers]: DevOps/CI/CD teams
+*[SEED SAVERS]: DevOps/CI/CD teams
+*[seed savers]: DevOps/CI/CD teams
 *[Master gardeners]: Senior engineers and architects
 *[MASTER GARDENERS]: Senior engineers and architects
 *[master gardeners]: Senior engineers and architects
