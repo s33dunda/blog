@@ -26,12 +26,12 @@
 *[Plant]: Application running in your infrastructure
 *[PLANT]: Application running in your infrastructure
 *[plant]: Application running in your infrastructure
-*[Garden]: The complete infrastructure landscape
-*[GARDEN]: The complete infrastructure landscape
-*[garden]: The complete infrastructure landscape
-*[Farm]: The complete infrastructure landscape
-*[FARM]: The complete infrastructure landscape
-*[farm]: The complete infrastructure landscape
+*[Garden]: The complete infrastructure landscape; The Platform
+*[GARDEN]: The complete infrastructure landscape; The Platform
+*[garden]: The complete infrastructure landscape; The Platform
+*[Farm]: The complete infrastructure landscape; The Platform
+*[FARM]: The complete infrastructure landscape; The Platform
+*[farm]: The complete infrastructure landscape; The Platform
 *[Plots]: Virtual Private Clouds (VPCs) that isolate resources
 *[PLOTS]: Virtual Private Clouds (VPCs) that isolate resources
 *[plots]: Virtual Private Clouds (VPCs) that isolate resources
