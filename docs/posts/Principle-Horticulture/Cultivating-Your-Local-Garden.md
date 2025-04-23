@@ -30,11 +30,7 @@ draft: false
 
 ## Preparing the Soil: Why Dev Containers and Devbox Matter
 
-Today we're going to plant the first seedlings in what will eventually become a flourishing garden. We'll start with the soil preparation - creating consistent, reproducible local development environments with Dev Containers and Devbox before we move on to cultivating a full Kubernetes ecosystem with ArgoCD.
-
-But first, let's address the garden slug in the room: _Why bother with specialized development environment tools when you could just install everything directly on your machine?_
-
-The answer is in the metaphor. Would you plant directly in unprepared soil, full of rocks and without proper pH balance? Of course not. Your local development environment needs the same careful preparation.
+Today we're going to plant a seedling in our local garden. We'll start with the soil preparation - creating consistent, reproducible local development environments with Dev Containers and Devbox. Then we'll plant a simple Go application, before we move on to cultivating a full Kubernetes ecosystem with ArgoCD.
 
 <!-- more -->
 
@@ -42,7 +38,7 @@ The answer is in the metaphor. Would you plant directly in unprepared soil, full
 
 Think of **Dev Containers** as biodegradable seed starter pots. They provide an isolated, consistent environment where your application seedlings can germinate without being affected by the peculiarities of your local soil (operating system). The Dev Containers spec aims to standardize how these seed pots are constructed, so no matter what gardening tools (IDE) you're using, your seeds will sprout the same way.
 
-**Devbox**, on the other hand, is like a premium seed starting mix - it provides all the nutrients (tools and dependencies) your seedlings need in exactly the right proportions. Built on Nix packages, it ensures everyone on your team is using identical tools with identical versions.
+**Devbox**, on the other hand, is like a premium seed starting mix - it provides all the nutrients (tools and dependencies) your seedlings need in exactly the right proportions. Built on [Nix packages](https://nixos.org/), it ensures everyone on your team is using identical tools with identical versions.
 
 Together, they provide precisely what we need: predictable, reproducible environments that work the same for everyone on the team, regardless of their local machine's quirks.
 
@@ -507,4 +503,4 @@ docker info
 
 ---
 
-_Have questions or need help with your development environment? Drop a comment below or join our community Discord server where our gardeners are always ready to help!_
+_Have questions or need help with your development environment? Reach out on [bluesky](https://bsky.app/profile/cdunda.bsky.social)!_
