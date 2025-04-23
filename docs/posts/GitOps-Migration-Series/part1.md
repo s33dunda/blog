@@ -67,7 +67,7 @@ apps:
     clusterEnv: stg
     env: dev
     namespace: your-namespace
-    revision: 0.1.0 # GitHub Tag/Release Name or SHA
+    releaseTag: 0.1.0
     repoPath: helm
     sharedValues: shared-values.yaml
     values: dev-values.yaml

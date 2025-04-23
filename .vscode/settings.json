@@ -27,5 +27,6 @@
     "shellenv",
     "superfences",
     "twemoji"
-  ]
+  ],
+  "markdown.validate.enabled": true
 }

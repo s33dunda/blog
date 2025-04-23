@@ -59,7 +59,14 @@ Let's get our hands dirty!
 
 ## Preparing the Soil: Initial Setup
 
-First, let's clone our sample repository that we'll use throughout this series:
+First, let's create a directory for our project:
+
+```bash
+mkdir garden-sample
+cd garden-sample
+```
+
+Alternatively, if you prefer to use a sample repository, you can clone it (note: you'll need to create this repository or use an existing one):
 
 ```bash
 git clone https://github.com/s33d-innovations/garden-sample
@@ -70,10 +77,16 @@ Now, let's install Devbox, which will help us manage all our tools:
 
 ```bash
 # For macOS/Linux users
-curl -fsSL https://get.jetpack.io/devbox | bash
+curl -fsSL https://get.jetify.com/devbox | bash
 
 # For Windows users with PowerShell
-irm https://get.jetpack.io/devbox/install.ps1 | iex
+irm https://get.jetify.com/devbox/install.ps1 | iex
+```
+
+You can verify that Devbox is installed correctly by checking its version:
+
+```bash
+devbox version
 ```
 
 ## Planting the First Seeds: Creating Our Development Environment
@@ -84,25 +97,67 @@ Now that we have our tools, let's create a `devbox.json` file that defines all t
 devbox init
 ```
 
-This creates a basic `devbox.json` file. Let's customize it to include everything we need:
+This creates a basic `devbox.json` file. We can now add packages one by one using the `devbox add` command:
+
+```bash
+# Add Go
+devbox add go
+
+# Add kubectl
+devbox add kubectl
+
+# Add kind
+devbox add kind
+
+# Add ArgoCD
+devbox add argocd
+
+# Add Kubernetes Helm
+devbox add kubernetes-helm
+
+# Add jq
+devbox add jq
+```
+
+Each of these commands will download and install the latest version of the package. If you need a specific version, you can specify it like `devbox add go@1.22.3`.
+
+Let's check our `devbox.json` file to see what was created:
+
+```bash
+cat devbox.json
+```
+
+You should see something like:
 
 ```json
 {
   "packages": [
-    "go@1.22.3",
-    "kubectl@1.29.2",
-    "kind@0.22.0",
-    "argocd@2.9.2",
-    "kubernetes-helm@3.14.3",
-    "jq@1.7.1"
+    "go@latest",
+    "kubectl@latest",
+    "kind@latest",
+    "argocd@latest",
+    "kubernetes-helm@latest",
+    "jq@latest"
   ],
   "shell": {
-    "init_hook": ["echo 'Your garden tools are ready!'"]
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
   }
 }
 ```
 
-This specifies that we want Go for our application code, along with Kubernetes tools (kubectl, kind, and helm) for container orchestration, and ArgoCD for our deployment pipeline - all at specific versions to ensure consistency.
+Let's update the init_hook to display a more gardening-themed message:
+
+```bash
+# You can edit the file directly, or use a text editor of your choice
+sed -i '' 's/echo '"'"'Welcome to devbox!'"'"' > \/dev\/null/echo '"'"'Your garden tools are ready!'"'"'/g' devbox.json
+```
 
 Let's activate our tools:
 
@@ -111,6 +166,19 @@ devbox shell
 ```
 
 You should now have access to all these tools, isolated from your system's global installations. Think of it as having a perfect set of garden tools in a clean shed, separate from all the other tools in your garage.
+
+Alternatively, you can run commands directly using `devbox run`:
+
+```bash
+# Check Go version
+devbox run -- go version
+
+# Check kubectl version
+devbox run -- kubectl version --client
+
+# Check kind version
+devbox run -- kind --version
+```
 
 ## From Seedlings to Starter Pots: Creating a Dev Container
 
@@ -128,6 +196,10 @@ This creates a `.devcontainer` directory with two important files:
 Let's examine these files:
 
 ```bash
+# List the contents of the .devcontainer directory
+ls -la .devcontainer
+
+# View the devcontainer.json file
 cat .devcontainer/devcontainer.json
 ```
 
@@ -135,7 +207,7 @@ You'll see something like:
 
 ```json
 {
-  "name": "Devbox Dev Container",
+  "name": "Devbox Remote Container",
   "build": {
     "dockerfile": "./Dockerfile",
     "context": ".."
@@ -143,7 +215,9 @@ You'll see something like:
   "customizations": {
     "vscode": {
       "settings": {},
-      "extensions": ["jetpack-io.devbox"]
+      "extensions": [
+        "jetpack-io.devbox"
+      ]
     }
   },
   "remoteUser": "devbox"
@@ -169,10 +243,14 @@ USER ${DEVBOX_USER}:${DEVBOX_USER}
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.json devbox.json
 COPY --chown=${DEVBOX_USER}:${DEVBOX_USER} devbox.lock devbox.lock
 
-RUN devbox run -- echo "Installed Packages."
+
+
+RUN devbox run -- echo "Installed Packages." && nix-store --gc && nix-store --optimise
 
 RUN devbox shellenv --init-hook >> ~/.profile
 ```
+
+Note that the Docker image name has changed from `jetpackio/devbox:latest` to `jetify-com/devbox:latest` in newer versions of Devbox.
 
 ## Germination: Running Our Dev Container
 
@@ -225,10 +303,23 @@ You should see output confirming that all your tools are installed at the versio
 
 ## Transplanting: Creating a Simple Go Application
 
-Now that our environment is ready, let's create a simple Go application that we'll eventually deploy to Kubernetes:
+Now that our environment is ready, let's create a simple Go application that we'll eventually deploy to Kubernetes. We'll create a directory structure like this:
+
+```
+garden-sample/
+├── app/
+│   ├── go.mod
+│   └── main.go
+└── go.work
+```
+
+Let's start by creating the app directory and the main Go file:
 
 ```bash
+# Create the app directory
 mkdir -p app
+
+# Create the Go application file
 cat > app/main.go << 'EOF'
 package main
 
@@ -255,15 +346,66 @@ func main() {
 EOF
 ```
 
-Build and run the application:
+Now, let's initialize a Go module for our application:
 
 ```bash
+# Navigate to the app directory
 cd app
-go build -o seedling
-./seedling
+
+# Create a go.mod file
+echo 'module example.com/seedling
+
+go 1.24
+' > go.mod
+
+# Verify the go.mod file was created
+cat go.mod
+
+# Return to the project root
+cd ..
 ```
 
-Open your browser to http://localhost:8080, and you should see your seedling's greeting!
+Next, we need to create a Go workspace file to help Go find our module. This is important when working with Go modules in subdirectories:
+
+```bash
+# Create a go.work file in the project root
+echo 'go 1.24
+
+use ./app
+' > go.work
+```
+
+Now we can build and run the application using Devbox:
+
+```bash
+# Build the application from the project root
+devbox run -- go build -o seedling ./app
+
+# Run the application
+devbox run -- ./seedling
+```
+
+If you encounter Go version compatibility issues, you may need to update your go.mod and go.work files to match the Go version provided by Devbox:
+
+```bash
+# Check your Go version
+devbox run -- go version
+
+# Update your go.mod file accordingly
+# For example, if Devbox provides Go 1.24.1:
+echo 'module example.com/seedling
+
+go 1.24
+' > app/go.mod
+
+# Also update your go.work file
+echo 'go 1.24
+
+use ./app
+' > go.work
+```
+
+Once the application is running, open your browser to http://localhost:8080, and you should see your seedling's greeting!
 
 ## Why This Approach? Solving Real Problems
 
@@ -288,6 +430,80 @@ In the next post, we'll create a local Kubernetes cluster using Kind, and start 
     Good gardeners know that proper soil preparation is the foundation of a successful garden. Similarly, well-crafted development environments are the foundation of successful software projects.
 
 Stay tuned as we continue to cultivate our garden, moving from these simple seedlings to a lush, integrated ecosystem of services and tools!
+
+## Troubleshooting
+
+### Go Module Not Found Issues
+
+If you encounter errors like `go: cannot find main module, but found .git/config in /path/to/your/repo`, it means Go can't find your module. This typically happens when you're trying to build from a directory that doesn't contain a go.mod file or isn't part of a Go workspace:
+
+```bash
+# Create a go.work file in your current directory
+echo 'go 1.24
+
+use ./app
+' > go.work
+
+# Now try building again
+devbox run -- go build -o seedling ./app
+```
+
+### Go Version Compatibility Issues
+
+If you encounter errors like `compile: version "go1.23.4" does not match go tool version "go1.24.1"`, you need to update your go.mod file to match the Go version provided by Devbox:
+
+```bash
+# Check your Go version
+devbox run -- go version
+
+# Update your go.mod file accordingly
+echo 'module example.com/seedling
+
+go 1.24
+' > app/go.mod
+
+# Also update your go.work file if you have one
+echo 'go 1.24
+
+use ./app
+' > go.work
+```
+
+### Devbox Shell Not Working
+
+If you have trouble with the `devbox shell` command, you can use `devbox run` to execute commands within the Devbox environment:
+
+```bash
+# Instead of entering a shell and running commands
+devbox run -- <command>
+
+# For example
+devbox run -- go build -o seedling
+```
+
+### Package Installation Issues
+
+If you encounter issues installing packages, you can try:
+
+```bash
+# Update Devbox
+devbox version update
+
+# Clear Devbox cache
+devbox nix gc
+```
+
+### Docker Container Issues
+
+If you have issues with the Dev Container:
+
+```bash
+# Rebuild the container
+devbox generate devcontainer --force
+
+# Check Docker is running
+docker info
+```
 
 ---
 
