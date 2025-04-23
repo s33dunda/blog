@@ -1,6 +1,6 @@
 ---
 title: "Cultivating Your Local Garden: Dev Containers and Devbox as Your First Seedlings"
-date: 2025-04-13
+date: 2025-04-23
 authors:
   - s33d-innovations
 categories:
@@ -13,7 +13,7 @@ tags:
   - nix-packages
   - local-development
   - kubernetes
-draft: true
+draft: false
 ---
 
 # Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox

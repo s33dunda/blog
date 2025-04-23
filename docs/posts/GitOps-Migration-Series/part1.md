@@ -13,7 +13,7 @@ tags:
   - github-actions
   - x
   - kubernetes
-draft: false
+draft: true
 ---
 
 # GitOps Migration Series: From X to GitOps with GitHub Actions and ArgoCD
