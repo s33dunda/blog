@@ -27,34 +27,35 @@ It's difficult to explain technical concepts to non-technical people. And especi
 
 ## The Garden Foundation (Infrastructure)
 
-| Metaphor | Technical Meaning | Plant Meaning | Abbreviation Format |
-|----------|------------------|--------------|---------------------|
-| **Soil** | Platform/runtime environment | Growing medium that provides physical support and nutrients | *[Soil]: Platform and runtime environment where applications grow* |
-| **Garden/Farm** | Organization/business | Cultivated ecosystem with multiple plant species working together | *[Garden]: The complete organization or business ecosystem* |
-| **Sunlight** | Electricity/power | Primary energy source that powers photosynthesis and growth | *[Sunlight]: Electricity and power supporting the infrastructure* |
+| Metaphor | Technical Meaning | Plant Meaning | Concrete Example |
+|----------|------------------|--------------|------------------|
+| **Garden/Farm** | Organization/business ecosystem | Cultivated ecosystem with multiple plant species | A software company with multiple product lines and services |
+| **Soil** | Platform/runtime environment | Growing medium providing physical support and nutrients | Kubernetes cluster where applications run |
+| **Plots/Beds** | VPCs/Network segments | Designated growing areas with specific conditions | AWS Virtual Private Cloud separating production from development environments |
 
 ## Plant Life (Applications)
 
-| Metaphor | Technical Meaning | Plant Meaning | Abbreviation Format |
-|----------|------------------|--------------|---------------------|
-| **Seeds** | Container images | Embryonic plant structures containing genetic instructions | *[Seeds]: Container images waiting to grow into running services* |
-| **Plants** | Running containers/applications | Living organisms that grow, process resources, and respond to their environment | *[Plants]: Running containers and applications in your infrastructure* |
-| **Fruits** | Tangible outputs/assets | Developed structures containing seeds and resources for reproduction and dispersal | *[Fruits]: Tangible outputs and assets produced by applications* |
+| Metaphor | Technical Meaning | Plant Meaning | Concrete Example |
+|----------|------------------|--------------|------------------|
+| **Seeds** | Container images | Embryonic plant structures containing genetic instructions | Docker images stored in a container registry like Docker Hub or ECR |
+| **Plants** | Running containers/applications | Living organisms that grow, process resources, and respond to environment | A deployed microservice handling authentication |
+| **Fruits** | Tangible outputs/business value | Developed structures containing seeds and resources | Generated reports, processed transactions, or customer insights |
 
 ## Resources (Compute)
 
-| Metaphor | Technical Meaning | Plant Meaning | Abbreviation Format |
-|----------|------------------|--------------|---------------------|
-| **Sap** | Memory (internal resource management) | Fluid carrying nutrients, sugars, and signals throughout the plant | *[Sap]: Memory and internal resource management* |
-| **Enzymes** | CPU/Processing power | Biological catalysts that enable metabolic reactions and energy conversion | *[Enzymes]: CPU and processing power that drive applications* |
+| Metaphor | Technical Meaning | Plant Meaning | Concrete Example |
+|----------|------------------|--------------|------------------|
+| **Sunlight** | Electricity/power | Primary energy source for photosynthesis and growth | Data center power allocation for your cloud infrastructure |
+| **Enzymes** | CPU/Processing power | Biological catalysts that enable metabolic reactions | CPU allocation for a compute-intensive ML model training job |
+| **Sap** | Memory resources | Fluid carrying nutrients and signals throughout the plant | RAM allocated to a database instance for caching frequently accessed data |
 
 ## Flow Systems (Data & Communication)
 
-| Metaphor | Technical Meaning | Plant Meaning | Abbreviation Format |
-|----------|------------------|--------------|---------------------|
-| **Water** | Data flow | Essential transport medium that moves nutrients and enables biological processes | *[Water]: Data flow throughout your system* |
-| **Carbon Dioxide** | Input data | Raw material absorbed from the environment for processing | *[Carbon Dioxide]: Input data that applications process* |
-| **Oxygen** | Data outputs/responses | Processed output released back into the environment | *[Oxygen]: Data outputs and responses produced by applications* |
+| Metaphor | Technical Meaning | Plant Meaning | Concrete Example |
+|----------|------------------|--------------|------------------|
+| **Water** | Data flow throughout the system | Essential transport medium for nutrients | API requests flowing between microservices |
+| **Carbon Dioxide** | Input data for processing | Raw material absorbed from environment for processing | Raw customer data entering a data pipeline |
+| **Oxygen** | Data outputs/responses | Processed output released back into environment | Processed analytics results delivered to a dashboard |
 
 ## Plant Communication & Connectivity
 
