@@ -1,0 +1,179 @@
+/* Custom styling for blog posts */
+.md-typeset h1 {
+  color: var(--md-primary-fg-color);
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+}
+
+/* Add a subtle border to blog post cards */
+.md-post__content {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.md-post__content:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the post metadata */
+.md-post__meta {
+  font-size: 0.75rem;
+  color: var(--md-default-fg-color--light);
+}
+
+/* Style code blocks */
+.highlight {
+  background: var(--md-code-bg-color);
+  border-radius: 4px;
+}
+
+/* Add some spacing to the navigation */
+.md-nav__item {
+  margin: 0.4rem 0;
+}
+
+/* Style blockquotes */
+blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  background: var(--md-code-bg-color);
+}
+
+/* Add a gradient to the header */
+.md-header {
+  background: linear-gradient(
+    to right,
+    var(--md-primary-fg-color),
+    var(--md-accent-fg-color)
+  );
+}
+
+.ai-content {
+  border: 2px solid #651fff;
+  border-radius: 8px;
+  padding: 1em;
+  margin: 1em 0;
+  background-color: rgba(101, 31, 255, 0.05);
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #651fff;
+}
+
+.ai-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5em;
+}
+
+.ai-header span {
+  font-weight: bold;
+  color: #651fff;
+}
+
+.ai-content h3 {
+  color: #651fff;
+  margin-top: 1em;
+}
+
+/* Common styles for Buy Me a Coffee buttons */
+.bmc-button {
+  position: fixed;
+  z-index: 999; /* Increased z-index to ensure visibility */
+  transition: opacity 0.3s;
+}
+
+/* Bottom right button */
+.bmc-button-bottom {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Top right button */
+.bmc-button-top {
+  top: 80px; /* Adjusted to avoid header conflict */
+  right: 20px;
+}
+
+/* Hide button when scrolling */
+.bmc-button.hidden {
+  opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .bmc-button-bottom {
+    bottom: 10px;
+    right: 10px;
+  }
+  .bmc-button-top {
+    top: 70px; /* Adjusted for mobile */
+    right: 10px;
+  }
+}
+
+/* Image tooltip styles */
+.img-tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted var(--md-primary-fg-color);
+  cursor: help;
+}
+
+.img-tooltip .tooltip-image {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1000;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 300px;
+  max-height: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.img-tooltip:hover .tooltip-image {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Header Buy Me a Coffee button styles */
+.md-header__button--bmc {
+  margin: 0 0.4rem;
+  padding: 0.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.md-header__button--bmc img {
+  height: 32px !important;
+  width: auto !important;
+}
+
+/* Hide BMC button on mobile */
+@media screen and (max-width: 76.1875em) {
+  .md-header__button--bmc {
+    display: none;
+  }
+}
+
+/* Custom styling for Giscus comments */
+.giscus, .giscus-frame {
+  width: 100%;
+  margin-top: 2rem;
+}

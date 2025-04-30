@@ -1,0 +1,1437 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A blog about SRE, DevOps, Platform Engineering, and more.">
+      
+      
+      
+        <link rel="canonical" href="https://blog.dunda.me/cultivating-your-local-garden-create-seedlings-with-dev-containers-and-devbox/">
+      
+      
+        <link rel="prev" href="../platform-engineers-nyc-introducing-canyon-the-ai-for-developer-self-service/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox - Dunda's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cultivating-your-local-garden-create-seedlings-with-dev-containers-and-devbox" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <!-- Logo/title section -->
+    <a href=".." title="Dunda's Blog" class="md-header__button md-logo" aria-label="Dunda's Blog">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Dunda's Blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <!-- Buy Me a Coffee button -->
+    <div class="md-header__button md-header__button--bmc">
+      <a href="https://www.buymeacoffee.com/s33dunda" target="_blank">
+        <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 145px !important;">
+      </a>
+    </div>
+    <!-- Search button -->
+    
+    <!-- Theme toggle -->
+    
+      <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="deep-purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+    
+  </nav>
+</header>
+
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Dunda&#39;s Blog" class="md-nav__button md-logo" aria-label="Dunda's Blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m14.6 16.6 4.6-4.6-4.6-4.6L16 6l6 6-6 6zm-5.2 0L4.8 12l4.6-4.6L8 6l-6 6 6 6z"/></svg>
+
+    </a>
+    Dunda's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welcome to Dunda's Blog!
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/glossary/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.7 3.3S19.3 3 17.2 3c-5.5 0-15.6 2.1-14 17.8 1.1.1 2.2.2 3.2.2C24.3 21 20.7 3.3 20.7 3.3M7 17S7 7 17 7c0 0-6 2-10 10"/></svg>
+  
+  <span class="md-ellipsis">
+    Glossary
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Archive
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2025/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/2024/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2024
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Categories
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Categories
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/artificial-intelligence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Artificial Intelligence
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/devops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    DevOps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/doc-failures/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Doc Failures
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/local-development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Local Development
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../category/platform-engineering/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Platform Engineering
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-soil-why-dev-containers-and-devbox-matter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing the Soil: Why Dev Containers and Devbox Matter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#seedling-selection-understanding-dev-containers-and-devbox" class="md-nav__link">
+    <span class="md-ellipsis">
+      Seedling Selection: Understanding Dev Containers and Devbox
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-selection-setting-up-our-garden" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tool Selection: Setting Up Our Garden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-the-soil-initial-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing the Soil: Initial Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#planting-the-first-seeds-creating-our-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Planting the First Seeds: Creating Our Development Environment
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#from-seedlings-to-starter-pots-creating-a-dev-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      From Seedlings to Starter Pots: Creating a Dev Container
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#germination-running-our-dev-container" class="md-nav__link">
+    <span class="md-ellipsis">
+      Germination: Running Our Dev Container
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Germination: Running Our Dev Container">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-using-vs-code-recommended-for-beginners" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 1: Using VS Code (Recommended for beginners)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-using-devpod" class="md-nav__link">
+    <span class="md-ellipsis">
+      Option 2: Using Devpod
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-our-seedlings-verifying-our-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Our Seedlings: Verifying Our Setup
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transplanting-creating-a-simple-go-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transplanting: Creating a Simple Go Application
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-approach-solving-real-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why This Approach? Solving Real Problems
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#whats-next-from-seedling-to-garden" class="md-nav__link">
+    <span class="md-ellipsis">
+      What's Next: From Seedling to Garden
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Troubleshooting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#go-module-not-found-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Module Not Found Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#go-version-compatibility-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Go Version Compatibility Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#devbox-shell-not-working" class="md-nav__link">
+    <span class="md-ellipsis">
+      Devbox Shell Not Working
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#package-installation-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Package Installation Issues
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker-container-issues" class="md-nav__link">
+    <span class="md-ellipsis">
+      Docker Container Issues
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href=".." class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
+            
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://github.com/s33d-innovations.png" alt="S33D Innovations">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://s33d.io">S33D Innovations</a>
+                        
+                      </strong>
+                      <br>
+                      Platform Engineering Blog
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-04-23 00:00:00+00:00" class="md-ellipsis">April 23, 2025</time>
+                      </div>
+                    </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../category/devops/">DevOps</a>, 
+                              <a href="../category/platform-engineering/">Platform Engineering</a>, 
+                              <a href="../category/local-development/">Local Development</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              8 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
+          
+        </div>
+      </div>
+    </div>
+    <article class="md-content__inner md-typeset">
+      
+        
+  
+
+
+  <nav class="md-tags" >
+    
+      
+      
+      
+        <span class="md-tag">devbox</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">devcontainers</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">kubernetes</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">local-development</span>
+      
+    
+      
+      
+      
+        <span class="md-tag">nix-packages</span>
+      
+    
+  </nav>
+
+
+
+<h1 id="cultivating-your-local-garden-create-seedlings-with-dev-containers-and-devbox">Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox</h1>
+<p><img alt="Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox" src="../assets/images/seedling-local-dev.jpg" /></p>
+<div class="admonition note">
+<p class="admonition-title">Background</p>
+<p>I've been planting development environments for over a decade, and like choosing between heirloom or hybrid seeds.</p>
+</div>
+<details class="info">
+<summary>Goals</summary>
+<p>It's all about consistency, reproducibility, and avoiding dependency hell. We want to create a consistent, reproducible local development environment that works the same for everyone on the team, regardless of their local machine's quirks.</p>
+</details>
+<h2 id="preparing-the-soil-why-dev-containers-and-devbox-matter">Preparing the Soil: Why Dev Containers and Devbox Matter</h2>
+<p>Today we're going to plant a seedling in our local garden. We'll start with the soil preparation - creating consistent, reproducible local development environments with Dev Containers and Devbox. Then we'll plant a simple Go application, before we move on to cultivating a full Kubernetes ecosystem with ArgoCD.</p>
+<!-- more -->
+
+<h2 id="seedling-selection-understanding-dev-containers-and-devbox">Seedling Selection: Understanding Dev Containers and Devbox</h2>
+<p>Think of <strong>Dev Containers</strong> as biodegradable seed starter pots. They provide an isolated, consistent environment where your application seedlings can germinate without being affected by the peculiarities of your local soil (operating system). The Dev Containers spec aims to standardize how these seed pots are constructed, so no matter what gardening tools (IDE) you're using, your seeds will sprout the same way.</p>
+<p><strong>Devbox</strong>, on the other hand, is like a premium seed starting mix - it provides all the nutrients (tools and dependencies) your seedlings need in exactly the right proportions. Built on <a href="https://nixos.org/">Nix packages</a>, it ensures everyone on your team is using identical tools with identical versions.</p>
+<p>Together, they provide precisely what we need: predictable, reproducible environments that work the same for everyone on the team, regardless of their local machine's quirks.</p>
+<h2 id="tool-selection-setting-up-our-garden">Tool Selection: Setting Up Our Garden</h2>
+<p>Before we start planting, let's gather our tools. You'll need:</p>
+<ol>
+<li>Docker (for running containers)</li>
+<li>Git (for retrieving our sample code)</li>
+<li>A terminal (your garden trowel)</li>
+<li>VS Code (optional but recommended)</li>
+</ol>
+<p>Let's get our hands dirty!</p>
+<h2 id="preparing-the-soil-initial-setup">Preparing the Soil: Initial Setup</h2>
+<p>First, let's create a directory for our project:</p>
+<div class="highlight"><pre><span></span><code>mkdir<span class="w"> </span>garden-sample
+<span class="nb">cd</span><span class="w"> </span>garden-sample
+</code></pre></div>
+<p>Alternatively, if you prefer to use a sample repository, you can clone it (note: you'll need to create this repository or use an existing one):</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/s33d-innovations/garden-sample
+<span class="nb">cd</span><span class="w"> </span>garden-sample
+</code></pre></div>
+<p>Now, let's install Devbox, which will help us manage all our tools:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># For macOS/Linux users</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://get.jetify.com/devbox<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+
+<span class="c1"># For Windows users with PowerShell</span>
+irm<span class="w"> </span>https://get.jetify.com/devbox/install.ps1<span class="w"> </span><span class="p">|</span><span class="w"> </span>iex
+</code></pre></div>
+<p>You can verify that Devbox is installed correctly by checking its version:</p>
+<div class="highlight"><pre><span></span><code>devbox<span class="w"> </span>version
+</code></pre></div>
+<h2 id="planting-the-first-seeds-creating-our-development-environment">Planting the First Seeds: Creating Our Development Environment</h2>
+<p>Now that we have our tools, let's create a <code>devbox.json</code> file that defines all the tools we'll need for our project:</p>
+<div class="highlight"><pre><span></span><code>devbox<span class="w"> </span>init
+</code></pre></div>
+<p>This creates a basic <code>devbox.json</code> file. We can now add packages one by one using the <code>devbox add</code> command:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Add Go</span>
+devbox<span class="w"> </span>add<span class="w"> </span>go
+
+<span class="c1"># Add kubectl</span>
+devbox<span class="w"> </span>add<span class="w"> </span>kubectl
+
+<span class="c1"># Add kind</span>
+devbox<span class="w"> </span>add<span class="w"> </span>kind
+
+<span class="c1"># Add ArgoCD</span>
+devbox<span class="w"> </span>add<span class="w"> </span>argocd
+
+<span class="c1"># Add Kubernetes Helm</span>
+devbox<span class="w"> </span>add<span class="w"> </span>kubernetes-helm
+
+<span class="c1"># Add jq</span>
+devbox<span class="w"> </span>add<span class="w"> </span>jq
+</code></pre></div>
+<p>Each of these commands will download and install the latest version of the package. If you need a specific version, you can specify it like <code>devbox add go@1.22.3</code>.</p>
+<p>Let's check our <code>devbox.json</code> file to see what was created:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>devbox.json
+</code></pre></div>
+<p>You should see something like:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;packages&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="s2">&quot;go@latest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;kubectl@latest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;kind@latest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;argocd@latest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;kubernetes-helm@latest&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s2">&quot;jq@latest&quot;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;shell&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;init_hook&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">      </span><span class="s2">&quot;echo &#39;Welcome to devbox!&#39; &gt; /dev/null&quot;</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;scripts&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;test&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Let's update the init_hook to display a more gardening-themed message:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># You can edit the file directly, or use a text editor of your choice</span>
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;&#39;</span><span class="w"> </span><span class="s1">&#39;s/echo &#39;</span><span class="s2">&quot;&#39;&quot;</span><span class="s1">&#39;Welcome to devbox!&#39;</span><span class="s2">&quot;&#39;&quot;</span><span class="s1">&#39; &gt; \/dev\/null/echo &#39;</span><span class="s2">&quot;&#39;&quot;</span><span class="s1">&#39;Your garden tools are ready!&#39;</span><span class="s2">&quot;&#39;&quot;</span><span class="s1">&#39;/g&#39;</span><span class="w"> </span>devbox.json
+</code></pre></div>
+<p>Let's activate our tools:</p>
+<div class="highlight"><pre><span></span><code>devbox<span class="w"> </span>shell
+</code></pre></div>
+<p>You should now have access to all these tools, isolated from your system's global installations. Think of it as having a perfect set of garden tools in a clean shed, separate from all the other tools in your garage.</p>
+<p>Alternatively, you can run commands directly using <code>devbox run</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check Go version</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>go<span class="w"> </span>version
+
+<span class="c1"># Check kubectl version</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>kubectl<span class="w"> </span>version<span class="w"> </span>--client
+
+<span class="c1"># Check kind version</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>kind<span class="w"> </span>--version
+</code></pre></div>
+<h2 id="from-seedlings-to-starter-pots-creating-a-dev-container">From Seedlings to Starter Pots: Creating a Dev Container</h2>
+<p>Now, let's use Devbox to generate a Dev Container configuration:</p>
+<div class="highlight"><pre><span></span><code>devbox<span class="w"> </span>generate<span class="w"> </span>devcontainer<span class="w"> </span>--force
+</code></pre></div>
+<p>This creates a <code>.devcontainer</code> directory with two important files:</p>
+<ol>
+<li><code>devcontainer.json</code> - The "recipe" for our container environment</li>
+<li><code>Dockerfile</code> - Instructions for building the container image</li>
+</ol>
+<p>Let's examine these files:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># List the contents of the .devcontainer directory</span>
+ls<span class="w"> </span>-la<span class="w"> </span>.devcontainer
+
+<span class="c1"># View the devcontainer.json file</span>
+cat<span class="w"> </span>.devcontainer/devcontainer.json
+</code></pre></div>
+<p>You'll see something like:</p>
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Devbox Remote Container&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;build&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;dockerfile&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;./Dockerfile&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;..&quot;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;customizations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;vscode&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;settings&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">      </span><span class="nt">&quot;extensions&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="s2">&quot;jetpack-io.devbox&quot;</span>
+<span class="w">      </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nt">&quot;remoteUser&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;devbox&quot;</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>And the Dockerfile:</p>
+<div class="highlight"><pre><span></span><code>cat<span class="w"> </span>.devcontainer/Dockerfile
+</code></pre></div>
+<p>Looks like:</p>
+<div class="highlight"><pre><span></span><code><span class="k">FROM</span><span class="w"> </span><span class="s">jetpackio/devbox:latest</span>
+
+<span class="c"># Installing your devbox project</span>
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/code</span>
+<span class="k">USER</span><span class="w"> </span><span class="s">root:root</span>
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/code<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>chown<span class="w"> </span><span class="si">${</span><span class="nv">DEVBOX_USER</span><span class="si">}</span>:<span class="si">${</span><span class="nv">DEVBOX_USER</span><span class="si">}</span><span class="w"> </span>/code
+<span class="k">USER</span><span class="w"> </span><span class="s">${DEVBOX_USER}:${DEVBOX_USER}</span>
+<span class="k">COPY</span><span class="w"> </span>--chown<span class="o">=</span><span class="si">${</span><span class="nv">DEVBOX_USER</span><span class="si">}</span>:<span class="si">${</span><span class="nv">DEVBOX_USER</span><span class="si">}</span><span class="w"> </span>devbox.json<span class="w"> </span>devbox.json
+<span class="k">COPY</span><span class="w"> </span>--chown<span class="o">=</span><span class="si">${</span><span class="nv">DEVBOX_USER</span><span class="si">}</span>:<span class="si">${</span><span class="nv">DEVBOX_USER</span><span class="si">}</span><span class="w"> </span>devbox.lock<span class="w"> </span>devbox.lock
+
+
+
+<span class="k">RUN</span><span class="w"> </span>devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Installed Packages.&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nix-store<span class="w"> </span>--gc<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>nix-store<span class="w"> </span>--optimize
+
+<span class="k">RUN</span><span class="w"> </span>devbox<span class="w"> </span>shellenv<span class="w"> </span>--init-hook<span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.profile
+</code></pre></div>
+<p>Note that the Docker image name has changed from <code>jetpackio/devbox:latest</code> to <code>jetify-com/devbox:latest</code> in newer versions of Devbox.</p>
+<h2 id="germination-running-our-dev-container">Germination: Running Our Dev Container</h2>
+<p>There are two main ways to start working within our Dev Container:</p>
+<h3 id="option-1-using-vs-code-recommended-for-beginners">Option 1: Using VS Code (Recommended for beginners)</h3>
+<p>If you have VS Code installed with the Dev Containers extension:</p>
+<ol>
+<li>Open VS Code</li>
+<li>Open the command palette (Ctrl+Shift+P or Cmd+Shift+P)</li>
+<li>Select "Dev Containers: Open Folder in Container"</li>
+<li>Navigate to your project folder</li>
+</ol>
+<p>VS Code will build and start the container, then open an integrated environment with all your tools ready to use.</p>
+<h3 id="option-2-using-devpod">Option 2: Using Devpod</h3>
+<p>For a more flexible approach that works with multiple IDEs, we can use Devpod:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Install Devpod</span>
+curl<span class="w"> </span>-fsSL<span class="w"> </span>https://devpod.sh/install.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+
+<span class="c1"># Add the Kubernetes provider (for later in our series)</span>
+devpod<span class="w"> </span>provider<span class="w"> </span>add<span class="w"> </span>kubernetes
+
+<span class="c1"># Start our environment</span>
+devpod<span class="w"> </span>up<span class="w"> </span>.
+</code></pre></div>
+<p>This will build your container, set up the environment, and connect your preferred editor.</p>
+<h2 id="testing-our-seedlings-verifying-our-setup">Testing Our Seedlings: Verifying Our Setup</h2>
+<p>Let's make sure everything is working by running a few commands in our container's terminal:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check Go version</span>
+go<span class="w"> </span>version
+
+<span class="c1"># Check kubectl version</span>
+kubectl<span class="w"> </span>version<span class="w"> </span>--client
+
+<span class="c1"># Check kind version</span>
+kind<span class="w"> </span>--version
+</code></pre></div>
+<p>You should see output confirming that all your tools are installed at the versions specified in your <code>devbox.json</code>.</p>
+<h2 id="transplanting-creating-a-simple-go-application">Transplanting: Creating a Simple Go Application</h2>
+<p>Now that our environment is ready, let's create a simple Go application that we'll eventually deploy to Kubernetes. We'll create a directory structure like this:</p>
+<div class="highlight"><pre><span></span><code>garden-sample/
+├── app/
+│   ├── go.mod
+│   └── main.go
+└── go.work
+</code></pre></div>
+<p>Let's start by creating the app directory and the main Go file:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create the app directory</span>
+mkdir<span class="w"> </span>-p<span class="w"> </span>app
+
+<span class="c1"># Create the Go application file</span>
+cat<span class="w"> </span>&gt;<span class="w"> </span>app/main.go<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">package main</span>
+
+<span class="s">import (</span>
+<span class="s">    &quot;fmt&quot;</span>
+<span class="s">    &quot;net/http&quot;</span>
+<span class="s">    &quot;os&quot;</span>
+<span class="s">)</span>
+
+<span class="s">func main() {</span>
+<span class="s">    http.HandleFunc(&quot;/&quot;, func(w http.ResponseWriter, r *http.Request) {</span>
+<span class="s">        hostname, _ := os.Hostname()</span>
+<span class="s">        fmt.Fprintf(w, &quot;Hello from s33d! I&#39;m a seedling running on %s\n&quot;, hostname)</span>
+<span class="s">    })</span>
+
+<span class="s">    port := os.Getenv(&quot;PORT&quot;)</span>
+<span class="s">    if port == &quot;&quot; {</span>
+<span class="s">        port = &quot;8080&quot;</span>
+<span class="s">    }</span>
+
+<span class="s">    fmt.Printf(&quot;Server starting on port %s...\n&quot;, port)</span>
+<span class="s">    http.ListenAndServe(&quot;:&quot;+port, nil)</span>
+<span class="s">}</span>
+<span class="s">EOF</span>
+</code></pre></div>
+<p>Now, let's initialize a Go module for our application:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Navigate to the app directory</span>
+<span class="nb">cd</span><span class="w"> </span>app
+
+<span class="c1"># Create a go.mod file</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;module example.com/seedling</span>
+
+<span class="s1">go 1.24</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>go.mod
+
+<span class="c1"># Verify the go.mod file was created</span>
+cat<span class="w"> </span>go.mod
+
+<span class="c1"># Return to the project root</span>
+<span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div>
+<p>Next, we need to create a Go workspace file to help Go find our module. This is important when working with Go modules in subdirectories:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a go.work file in the project root</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;go 1.24</span>
+
+<span class="s1">use ./app</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>go.work
+</code></pre></div>
+<p>Now we can build and run the application using Devbox:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Build the application from the project root</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>seedling<span class="w"> </span>./app
+
+<span class="c1"># Run the application</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>./seedling
+</code></pre></div>
+<p>If you encounter Go version compatibility issues, you may need to update your go.mod and go.work files to match the Go version provided by Devbox:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check your Go version</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>go<span class="w"> </span>version
+
+<span class="c1"># Update your go.mod file accordingly</span>
+<span class="c1"># For example, if Devbox provides Go 1.24.1:</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;module example.com/seedling</span>
+
+<span class="s1">go 1.24</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>app/go.mod
+
+<span class="c1"># Also update your go.work file</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;go 1.24</span>
+
+<span class="s1">use ./app</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>go.work
+</code></pre></div>
+<p>Once the application is running, open your browser to http://localhost:8080, and you should see your seedling's greeting!</p>
+<h2 id="why-this-approach-solving-real-problems">Why This Approach? Solving Real Problems</h2>
+<p>You might be wondering: why go through all this trouble? Couldn't I just install Go and Kubernetes tools directly on my machine?</p>
+<p>Here's where our gardening metaphor illuminates the benefits:</p>
+<ol>
+<li>
+<p><strong>Soil Consistency</strong>: Just like different plots of soil can have vastly different pH levels, nutrient content, and drainage properties, different developer machines can have conflicting dependencies, incompatible versions, and unique configurations. Dev Containers ensure everyone is working with identical soil conditions.</p>
+</li>
+<li>
+<p><strong>Seed Preservation</strong>: When you package your development environment with your code, you're essentially preserving the exact conditions that your seeds (application) need to sprout. Five years from now, someone can still clone your repo and have exactly the same environment you used to develop it.</p>
+</li>
+<li>
+<p><strong>Sustainable Gardening</strong>: By isolating your tools per project, you avoid the "dependency hell" that can occur when different projects need different versions of the same tools. It's like having separate garden beds for plants with different soil needs.</p>
+</li>
+<li>
+<p><strong>Transplant Readiness</strong>: Our goal is to eventually transplant these seedlings to Kubernetes. By developing in containers from the start, we ensure our application is container-ready from day one.</p>
+</li>
+</ol>
+<h2 id="whats-next-from-seedling-to-garden">What's Next: From Seedling to Garden</h2>
+<p>In the next post, we'll create a local Kubernetes cluster using Kind, and start preparing the ground for deploying our application with ArgoCD. We'll see how these seedlings we've planted today grow into a full development workflow that mirrors production environments.</p>
+<div class="admonition quote">
+<p class="admonition-title">Remember</p>
+<p>Good gardeners know that proper soil preparation is the foundation of a successful garden. Similarly, well-crafted development environments are the foundation of successful software projects.</p>
+</div>
+<p>Stay tuned as we continue to cultivate our garden, moving from these simple seedlings to a lush, integrated ecosystem of services and tools!</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="go-module-not-found-issues">Go Module Not Found Issues</h3>
+<p>If you encounter errors like <code>go: cannot find main module, but found .git/config in /path/to/your/repo</code>, it means Go can't find your module. This typically happens when you're trying to build from a directory that doesn't contain a go.mod file or isn't part of a Go workspace:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Create a go.work file in your current directory</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;go 1.24</span>
+
+<span class="s1">use ./app</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>go.work
+
+<span class="c1"># Now try building again</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>seedling<span class="w"> </span>./app
+</code></pre></div>
+<h3 id="go-version-compatibility-issues">Go Version Compatibility Issues</h3>
+<p>If you encounter errors like <code>compile: version "go1.23.4" does not match go tool version "go1.24.1"</code>, you need to update your go.mod file to match the Go version provided by Devbox:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Check your Go version</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>go<span class="w"> </span>version
+
+<span class="c1"># Update your go.mod file accordingly</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;module example.com/seedling</span>
+
+<span class="s1">go 1.24</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>app/go.mod
+
+<span class="c1"># Also update your go.work file if you have one</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;go 1.24</span>
+
+<span class="s1">use ./app</span>
+<span class="s1">&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>go.work
+</code></pre></div>
+<h3 id="devbox-shell-not-working">Devbox Shell Not Working</h3>
+<p>If you have trouble with the <code>devbox shell</code> command, you can use <code>devbox run</code> to execute commands within the Devbox environment:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Instead of entering a shell and running commands</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>&lt;command&gt;
+
+<span class="c1"># For example</span>
+devbox<span class="w"> </span>run<span class="w"> </span>--<span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>seedling
+</code></pre></div>
+<h3 id="package-installation-issues">Package Installation Issues</h3>
+<p>If you encounter issues installing packages, you can try:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Update Devbox</span>
+devbox<span class="w"> </span>version<span class="w"> </span>update
+
+<span class="c1"># Clear Devbox cache</span>
+devbox<span class="w"> </span>nix<span class="w"> </span>gc
+</code></pre></div>
+<h3 id="docker-container-issues">Docker Container Issues</h3>
+<p>If you have issues with the Dev Container:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Rebuild the container</span>
+devbox<span class="w"> </span>generate<span class="w"> </span>devcontainer<span class="w"> </span>--force
+
+<span class="c1"># Check Docker is running</span>
+docker<span class="w"> </span>info
+</code></pre></div>
+<hr />
+<p><em>Have questions or need help with your development environment? Reach out on <a href="https://bsky.app/profile/cdunda.bsky.social">bluesky</a>!</em></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+          data-repo="s33dunda/blog"
+          data-repo-id="R_kgDOMOhbJg"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOMOhbJs4CpjMg"
+          data-mapping="pathname"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-theme="preferred_color_scheme"
+          data-input-position="top"
+          data-strict="0"
+          data-input-position="bottom"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
+
+      
+    </article>
+  </div>
+
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+        
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../platform-engineers-nyc-introducing-canyon-the-ai-for-developer-self-service/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Platform Engineers NYC: Introducing Canyon: The AI for developer self-service">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Platform Engineers NYC: Introducing Canyon: The AI for developer self-service
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  <div style="margin-bottom: 1rem;">
+    <a href="https://www.buymeacoffee.com/s33dunda" target="_blank">
+      <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 40px !important;width: 145px !important;">
+    </a>
+  </div>
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/s33dunda" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://linkedin.com/in/charles-dunda" target="_blank" rel="noopener" title="linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/s33dunda" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://bsky.app/profile/cdunda.bsky.social" target="_blank" rel="noopener" title="bsky.app" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M111.8 62.2C170.2 105.9 233 194.7 256 242.4c23-47.6 85.8-136.4 144.2-180.2 42.1-31.6 110.3-56 110.3 21.8 0 15.5-8.9 130.5-14.1 149.2-18.2 64.8-84.4 81.4-143.3 71.3C456 322 482.2 380 425.6 438c-107.4 110.2-154.3-27.6-166.3-62.9-1.7-4.9-2.6-7.8-3.3-7.8s-1.6 3-3.3 7.8c-12 35.3-59 173.1-166.3 62.9-56.5-58-30.4-116 72.5-133.5C100 314.6 33.8 298 15.7 233.1 10.4 214.4 1.5 99.4 1.5 83.9c0-77.8 68.2-53.4 110.3-21.8z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.indexes", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../overrides/partials/javascripts/extra.html"></script>
+      
+        <script src="../javascripts/image-tooltips.js"></script>
+      
+    
+  </body>
+</html>
