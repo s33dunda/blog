@@ -1,5 +1,5 @@
 ---
-title: "Cultivating Your Local Garden: Dev Containers and Devbox as Your First Seedlings"
+title: "Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox"
 date: 2025-04-23
 authors:
   - s33d-innovations
@@ -18,7 +18,7 @@ draft: false
 
 # Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox
 
-![Cultivating Your Local Garden: Dev Containers and Devbox as Your First Seedlings](../../assets/images/seedling-local-dev.jpg)
+![Cultivating Your Local Garden: Create Seedlings with Dev Containers and Devbox](../../assets/images/seedling-local-dev.jpg)
 
 !!! note "Background"
 
