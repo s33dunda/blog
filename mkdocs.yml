@@ -45,7 +45,19 @@ extra:
       link: https://twitter.com/s33dunda
     - icon: fontawesome/brands/bluesky
       link: https://bsky.app/profile/cdunda.bsky.social
-  generator: false # Removes the "Made with Material for MkDocs" text
+  generator: false
+  comments:
+    enabled: true
+    giscus:
+      repo: s33dunda/blog
+      repo_id: R_kgDOMOhbJg
+      category: Announcements
+      category_id: DIC_kwDOMOhbJs4CpjMg
+      input_position: top
+      mapping: pathname
+      reactions_enabled: 1
+      emit_metadata: 0
+      theme: preferred_color_scheme
 markdown_extensions:
   - abbr
   - admonition

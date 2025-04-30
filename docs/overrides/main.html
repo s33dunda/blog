@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
+{% block content %}
+  {{super() }}
+  {% include "partials/comments.html"%}
+{% endblock %}
+
+
 {% block header %}
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
